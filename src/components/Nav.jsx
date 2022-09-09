@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 
-const Nav = () => {
+const Nav = (props) => {
+  const [query, setQuery] = useState('');
+
   return (
     <Container fluid className="header">
       <Row>
@@ -15,8 +18,12 @@ const Nav = () => {
                 <Form.Control
                   type="text"
                   placeholder="Inserisci il nome della città"
+                  value={query}
+                  onChange={(event) => {
+                    setQuery(event.target.value);
+                  }}
                 />
-                <div type="button" className="search-icon d-flex align-items-center justify-content-center">
+                <div type="button" className="search-icon d-flex align-items-center justify-content-center" onClick={() => props.getWeather(query)}>
                   <i className="bi bi-search"></i>
                 </div>
               </Form>
