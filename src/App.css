@@ -37,3 +37,27 @@
   }
 }
 
+.header {
+  background-color: #91B187;
+  color: #f6d9a8;
+}
+
+.form-control {
+  border-radius: 0%;
+  border: none;
+}
+
+.search-geo,
+.search-icon{
+  background: #f6d9a8;
+  color: #91B187;
+  width: 36px;
+}
+
+.search-geo {
+  border-radius: 50% 0 0 50%;
+}
+
+.search-icon {
+  border-radius: 0 50% 50% 0;
+}
