@@ -13,14 +13,15 @@ function App() {
     try {
       let res = await fetch(
         "https://api.openweathermap.org/data/2.5/weather?q=" +
-        city +
+          city +
           "&appid=" +
-          openWeaterApiKey
+          openWeaterApiKey +
+          "&units=metric"
       );
       if (res.ok) {
         let data = await res.json();
         setweatherData(data);
-        console.log('weatherdata', weatherData);
+        console.log("weatherdata", weatherData);
       } else {
         console.log("errore chiamata");
       }
@@ -31,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <Nav getWeather={(query) => getWeather(query)}/>
+      <Nav getWeather={(query) => getWeather(query)} />
       <Results weatherData={weatherData} />
     </div>
   );
