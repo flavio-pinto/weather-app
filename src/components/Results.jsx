@@ -1,9 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
+import Error from "./Error";
 
 const Results = (props) => {
   return (
     <Container>
-      {props.weatherData && (
+      {props.weatherData ? (
         <Row>
           <Col>
             <div className="weatherWrapper">
@@ -18,7 +19,9 @@ const Results = (props) => {
                 <Col>
                   {props.weatherData && (
                     <div>
-                      <span className="fs-1 fw-bold">{props.weatherData.main.temp}</span>
+                      <span className="fs-1 fw-bold">
+                        {props.weatherData.main.temp}
+                      </span>
                       <sup>°C</sup>
                     </div>
                   )}
@@ -53,8 +56,10 @@ const Results = (props) => {
                 </Col>
                 <Col>
                   <div>
-                  <small>Condition</small>
-                    <span className="text-capitalize">{props.weatherData.weather[0].description}</span>
+                    <small>Condition</small>
+                    <span className="text-capitalize">
+                      {props.weatherData.weather[0].description}
+                    </span>
                   </div>
                 </Col>
               </Row>
@@ -80,7 +85,7 @@ const Results = (props) => {
                       <i
                         style={{
                           transform:
-                            'rotate(' + props.weatherData.wind.deg + 'deg)'
+                            "rotate(" + props.weatherData.wind.deg + "deg)",
                         }}
                         className="bi bi-arrow-down-circle-fill d-block"
                       ></i>
@@ -91,6 +96,10 @@ const Results = (props) => {
             </div>
           </Col>
         </Row>
+      ) : props.fetchError.length > 0 ? (
+        <Error fetchError={props.fetchError} />
+      ) : (
+        <h2 className="ins-location display-5">Insert location to check current weather</h2>
       )}
     </Container>
   );

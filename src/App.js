@@ -8,6 +8,7 @@ import { useState } from "react";
 function App() {
   const openWeaterApiKey = "f305f00f0b71f3802101ed7c7f815885";
   const [weatherData, setweatherData] = useState(null);
+  const [fetchError, setFetchError] = useState('');
 
   const getWeather = async (city, geo) => {
     try {
@@ -24,16 +25,17 @@ function App() {
         setweatherData(data);
       } else {
         console.log("errore chiamata");
+        setFetchError('Api Call Error!');
       }
     } catch (error) {
-      console.log(error);
+      setFetchError('Something went wrong!');
     }
   };
 
   return (
     <div className="App">
       <Nav getWeather={(query) => getWeather(query)} />
-      <Results weatherData={weatherData} />
+      <Results weatherData={weatherData} fetchError={fetchError}/>
     </div>
   );
 }
