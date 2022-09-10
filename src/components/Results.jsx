@@ -29,7 +29,7 @@ const Results = (props) => {
                 <Col>
                   <img
                     src={
-                      "http://openweathermap.org/img/wn/" +
+                      "https://openweathermap.org/img/wn/" +
                       props.weatherData.weather[0].icon +
                       "@2x.png"
                     }
