@@ -65,3 +65,17 @@
   margin-top: 100px;
   opacity: 0.2;
 }
+
+.footer-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0; 
+  text-align: center;
+  opacity: 0.5;
+}
+
+.footer-text a {
+  color: #31473A;
+  font-weight: bold;
+}

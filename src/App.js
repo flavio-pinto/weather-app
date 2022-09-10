@@ -4,6 +4,7 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Results from "./components/Results";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const openWeaterApiKey = "f305f00f0b71f3802101ed7c7f815885";
@@ -36,6 +37,7 @@ function App() {
     <div className="App">
       <Nav getWeather={(query) => getWeather(query)} />
       <Results weatherData={weatherData} fetchError={fetchError}/>
+      <Footer />
     </div>
   );
 }
