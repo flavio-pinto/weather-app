@@ -7,6 +7,7 @@
 .header {
   background-color: #31473A;
   color: #7C8363;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .form-control {
@@ -32,6 +33,7 @@
 .weatherWrapper {
   margin: 100px auto;
   max-width: 580px;
+  font-family: 'Roboto', sans-serif;
   color: #31473A;
   background-color: #FFF;
   border: 1px solid #7C8363;
