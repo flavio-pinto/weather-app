@@ -1,7 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 
 const Results = (props) => {
-  console.log(props);
   return (
     <Container>
       {props.weatherData && (

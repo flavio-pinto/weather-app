@@ -9,19 +9,19 @@ function App() {
   const openWeaterApiKey = "f305f00f0b71f3802101ed7c7f815885";
   const [weatherData, setweatherData] = useState(null);
 
-  const getWeather = async (city) => {
+  const getWeather = async (city, geo) => {
     try {
       let res = await fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" +
+        "https://api.openweathermap.org/data/2.5/weather?" +
           city +
           "&appid=" +
           openWeaterApiKey +
           "&units=metric"
       );
+      
       if (res.ok) {
         let data = await res.json();
         setweatherData(data);
-        console.log("weatherdata", weatherData);
       } else {
         console.log("errore chiamata");
       }
